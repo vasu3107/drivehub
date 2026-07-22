@@ -5,6 +5,7 @@
 [![React](https://img.shields.io/badge/React-18-61DAFB.svg)](https://reactjs.org/)
 [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4-38B2AC.svg)](https://tailwindcss.com/)
 [![Pytest](https://img.shields.io/badge/Pytest-8.2-green.svg)](https://docs.pytest.org/)
+[![Vercel](https://img.shields.io/badge/Vercel-Deployed-black.svg)](https://vercel.com/)
 
 DriveHub is a full-stack, production-grade **Car Dealership Inventory Management System** built following strict **Test-Driven Development (TDD)** principles, clean architecture (SOLID), standardized API response envelopes, and transparent AI co-authorship standards.
 
@@ -17,7 +18,7 @@ DriveHub is a full-stack, production-grade **Car Dealership Inventory Management
 4. [API Architecture & Response Format](#-api-architecture--response-format)
 5. [Key Features](#-key-features)
 6. [Local Setup & Run Instructions](#-local-setup--run-instructions)
-7. [Deployment Recommendations](#-deployment-recommendations)
+7. [Vercel Deployment Guide (Frontend & Backend)](#-vercel-deployment-guide-frontend--backend)
 8. [Test-Driven Development & Test Report](#-test-driven-development--test-report)
 9. [My AI Usage (Mandatory)](#-my-ai-usage)
 
@@ -167,16 +168,23 @@ npm run dev
 
 ---
 
-## 🌐 Deployment Recommendations
+## ⚡ Vercel Deployment Guide (Frontend & Backend)
 
-To deploy this full-stack monorepo live for recruiter evaluation:
+The project includes pre-configured Vercel serverless integration (`vercel.json` + `api/index.py`), allowing both the Python FastAPI backend and React Vite frontend to deploy together under one live Vercel URL.
 
-### Option 1: Decoupled Cloud Deployment (Recommended & Free Tier Friendly)
-* **Frontend (React + Vite)**: Deploy to **Vercel** or **Netlify**. Connect your GitHub repository, set root directory to `frontend`, and set build command to `npm run build` with output directory `dist`.
-* **Backend (FastAPI)**: Deploy to **Render.com**, **Railway.app**, or **Fly.io**. Connect your GitHub repo, set root directory to `backend`, start command to `uvicorn app.main:app --host 0.0.0.0 --port $PORT`, and set `DATABASE_URL` environment variable.
+### Deployment Method A: 1-Click Vercel Dashboard Import
+1. Go to [Vercel New Project Dashboard](https://vercel.com/new).
+2. Import repository **`vasu3107/drivehub`**.
+3. Click **Deploy**. Vercel will automatically detect `vercel.json` and build both frontend and serverless Python backend.
 
-### Option 2: All-in-One Single Service Deployment (Docker Container)
-* Containerize both backend and frontend static build using Docker and deploy to **AWS App Runner**, **DigitalOcean App Platform**, or **Google Cloud Run**.
+### Deployment Method B: Vercel CLI Terminal
+```bash
+# 1. Log in to Vercel in terminal
+npx vercel login
+
+# 2. Deploy to production
+npx vercel --prod
+```
 
 ---
 
@@ -260,7 +268,7 @@ TOTAL                         369     51    86%
 Integrating AI as a pair-programmer dramatically accelerated development speed while maintaining high quality standards. By utilizing AI to write comprehensive Pytest suites first, edge cases like SQLite concurrency isolation and unauthorized role access were caught early. The AI co-authorship policy ensures complete transparency across commits:
 
 ```text
-git commit -m "docs: Update README.md with new design screenshot images
+git commit -m "docs: Update README.md with Vercel deployment guide
 
 Co-authored-by: Antigravity AI <ai@users.noreply.github.com>"
 ```
