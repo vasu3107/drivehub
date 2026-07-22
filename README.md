@@ -12,23 +12,45 @@ DriveHub is a full-stack, production-grade **Car Dealership Inventory Management
 
 ## 📋 Table of Contents
 1. [Project Overview](#-project-overview)
-2. [API Architecture & Response Format](#-api-architecture--response-format)
-3. [Key Features](#-key-features)
-4. [Local Setup & Run Instructions](#-local-setup--run-instructions)
-5. [Test-Driven Development & Test Report](#-test-driven-development--test-report)
-6. [Visual Application Showcase](#-visual-application-showcase)
+2. [Visual Application Showcase](#-visual-application-showcase)
+3. [API Architecture & Response Format](#-api-architecture--response-format)
+4. [Key Features](#-key-features)
+5. [Local Setup & Run Instructions](#-local-setup--run-instructions)
+6. [Test-Driven Development & Test Report](#-test-driven-development--test-report)
 7. [My AI Usage (Mandatory)](#-my-ai-usage)
 
 ---
 
 ## 🌟 Project Overview
 
-DriveHub provides an end-to-end inventory management solution for car dealerships. The system comprises a RESTful Python (FastAPI) backend with JWT authentication and role-based permissions, backed by an SQLite/SQLAlchemy database, and a single-page React application styled with Tailwind CSS.
+DriveHub provides an end-to-end inventory management solution for car dealerships. The system comprises a RESTful Python (FastAPI) backend with JWT authentication and role-based permissions, backed by an SQLite/SQLAlchemy database, and a single-page React application styled with an **Obsidian & Cyber Gold** luxury design system.
 
 ### Core Business Rules
 * **User Roles**: **Customer** (browse, search, purchase) vs **Admin** (add, edit, delete, restock).
 * **Inventory Control**: Purchasing a vehicle automatically decrements stock quantity by 1. Purchasing is strictly disabled when stock quantity is 0.
-* **Restock**: Admins can restock inventory, increasing available stock quantity.
+* **Admin Management Portal**: Dedicated Admin page (`/admin`) featuring Forms/UI to add, update, delete, and restock vehicle inventory.
+
+---
+
+## 🎨 Visual Application Showcase
+
+Real screenshots demonstrating the Obsidian & Cyber Gold application interface, React Routing, and Admin Control Center in action:
+
+### 1. Luxury Showroom Homepage (`/`)
+![DriveHub Luxury Showroom](docs/screenshots/showroom_homepage.png)
+*Features bespoke Obsidian Charcoal and Cyber Gold glassmorphism cards, stock status badges ("In Stock", "Low Stock", "Out of Stock"), formatted USD prices, and instant demo login switchers.*
+
+---
+
+### 2. Dedicated Admin Management Portal (`/admin`) — Forms & UI
+![DriveHub Admin Portal](docs/screenshots/admin_portal.png)
+*Dedicated Admin Control Center featuring Forms/UI to add new vehicles, update existing details, restock stock quantities, and delete vehicle records from the database.*
+
+---
+
+### 3. Dedicated Vehicle Details Page (`/vehicles/:id`)
+![DriveHub Vehicle Details](docs/screenshots/vehicle_details.png)
+*Detailed vehicle specifications view with high-res photography, stock level monitoring, and direct purchase triggers.*
 
 ---
 
@@ -197,17 +219,6 @@ TOTAL                         369     51    86%
 
 ---
 
-## 🎨 Visual Application Showcase
-
-The frontend features a modern, single-page dark luxury theme:
-
-1. **Dashboard & Vehicle Cards**: Shows vehicle image, specs, formatted currency, category pill, and dynamic stock status badges ("In Stock", "Low Stock", "Out of Stock").
-2. **Search & Multi-Filter Bar**: Real-time filtering by make/model keyword, category dropdown, and min/max price sliders.
-3. **Purchase Flow**: Real-time quantity decrementing with instant UI feedback; purchase button disabled when stock reaches 0.
-4. **Admin Panel**: Modal forms for adding new vehicles, editing specs, deleting records, and restocking inventory quantities.
-
----
-
 ## 🤖 My AI Usage
 
 ### 1. AI Tools Used
@@ -223,7 +234,7 @@ The frontend features a modern, single-page dark luxury theme:
 Integrating AI as a pair-programmer dramatically accelerated development speed while maintaining high quality standards. By utilizing AI to write comprehensive Pytest suites first, edge cases like SQLite concurrency isolation and unauthorized role access were caught early. The AI co-authorship policy ensures complete transparency across commits:
 
 ```text
-git commit -m "feat(backend): Add standardized API response & error envelopes
+git commit -m "feat(routing): Add React router, Admin forms/UI portal, Obsidian Gold palette, and updated UI screenshots
 
 Co-authored-by: Antigravity AI <ai@users.noreply.github.com>"
 ```

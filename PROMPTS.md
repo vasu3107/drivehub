@@ -8,7 +8,7 @@ This document logs the structured prompt engineering strategies, system personas
 
 ### **Prompt Strategy**: Architecture & System Design Blueprinting
 ```text
-System Role: Senior Full-Stack Architect (10+ years experience in Python, FastAPI, and React)
+System Role: Senior Full-Stack Architect (experience in Python, FastAPI, and React)
 Task: Design a production-ready monorepo architecture for a Car Dealership Inventory System.
 
 Requirements:
