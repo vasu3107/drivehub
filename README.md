@@ -17,8 +17,9 @@ DriveHub is a full-stack, production-grade **Car Dealership Inventory Management
 4. [API Architecture & Response Format](#-api-architecture--response-format)
 5. [Key Features](#-key-features)
 6. [Local Setup & Run Instructions](#-local-setup--run-instructions)
-7. [Test-Driven Development & Test Report](#-test-driven-development--test-report)
-8. [My AI Usage (Mandatory)](#-my-ai-usage)
+7. [Deployment Recommendations](#-deployment-recommendations)
+8. [Test-Driven Development & Test Report](#-test-driven-development--test-report)
+9. [My AI Usage (Mandatory)](#-my-ai-usage)
 
 ---
 
@@ -46,7 +47,7 @@ Real application screenshots demonstrating the Admin Portal, React Routing, and 
 
 ### 2. Admin Management Portal (`/admin`) — Light Mode
 ![DriveHub Admin Portal Light Mode](docs/screenshots/admin_portal_light.png)
-*Admin Control Center with Forms/UI in Light Mode.*
+*Admin Control Center with Forms/UI in Light Mode with high-contrast input placeholders.*
 
 ---
 
@@ -61,7 +62,7 @@ Real application screenshots demonstrating the Admin Portal, React Routing, and 
 The application includes an intuitive Theme Mode Selector in the header navigation:
 
 * **Dark Mode** (`dark`): Deep Obsidian Charcoal background (`#080a0f`) with Cyber Gold accents and glowing glass panels.
-* **Light Mode** (`light`): Clean, crisp white & slate styling (`bg-slate-50`) with gold highlights.
+* **Light Mode** (`light`): Clean, crisp white & slate styling (`bg-slate-100`) with gold highlights and dark high-contrast placeholders.
 * **System Mode** (`system`): Automatically syncs with the user's OS operating system color scheme preference.
 
 ---
@@ -166,6 +167,19 @@ npm run dev
 
 ---
 
+## 🌐 Deployment Recommendations
+
+To deploy this full-stack monorepo live for recruiter evaluation:
+
+### Option 1: Decoupled Cloud Deployment (Recommended & Free Tier Friendly)
+* **Frontend (React + Vite)**: Deploy to **Vercel** or **Netlify**. Connect your GitHub repository, set root directory to `frontend`, and set build command to `npm run build` with output directory `dist`.
+* **Backend (FastAPI)**: Deploy to **Render.com**, **Railway.app**, or **Fly.io**. Connect your GitHub repo, set root directory to `backend`, start command to `uvicorn app.main:app --host 0.0.0.0 --port $PORT`, and set `DATABASE_URL` environment variable.
+
+### Option 2: All-in-One Single Service Deployment (Docker Container)
+* Containerize both backend and frontend static build using Docker and deploy to **AWS App Runner**, **DigitalOcean App Platform**, or **Google Cloud Run**.
+
+---
+
 ## 🔑 Demo Account Credentials
 
 For effortless testing, use the quick-switch demo buttons in the header navigation or sign in manually using:
@@ -246,7 +260,7 @@ TOTAL                         369     51    86%
 Integrating AI as a pair-programmer dramatically accelerated development speed while maintaining high quality standards. By utilizing AI to write comprehensive Pytest suites first, edge cases like SQLite concurrency isolation and unauthorized role access were caught early. The AI co-authorship policy ensures complete transparency across commits:
 
 ```text
-git commit -m "feat(theme): Add Dark, Light, and System theme mode switching with Admin portal screenshots
+git commit -m "feat(ui): Fix header contrast, high contrast light mode placeholders, and add deployment guide
 
 Co-authored-by: Antigravity AI <ai@users.noreply.github.com>"
 ```

@@ -20,7 +20,7 @@ export function App() {
     <ThemeProvider>
       <AuthProvider>
         <BrowserRouter>
-          <div className="min-h-screen bg-slate-50 dark:bg-[#080a0f] text-slate-900 dark:text-slate-100 flex flex-col font-sans transition-colors duration-300">
+          <div className="min-h-screen bg-slate-100 dark:bg-[#080a0f] text-slate-900 dark:text-slate-100 flex flex-col font-sans transition-colors duration-300">
             
             <Navbar />
 
@@ -34,16 +34,10 @@ export function App() {
               </Routes>
             </main>
 
-            <footer className="border-t border-slate-200 dark:border-obsidian-border bg-white dark:bg-obsidian-950 py-8 text-center text-xs text-slate-500 dark:text-slate-400 transition-colors">
+            <footer className="border-t border-slate-200 dark:border-obsidian-border bg-white dark:bg-obsidian-950 py-6 text-center text-xs text-slate-500 dark:text-slate-400 transition-colors">
               <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <p>© {new Date().getFullYear()} DriveHub — Car Dealership Inventory System (TDD Kata).</p>
-                <div className="flex items-center space-x-4">
-                  <span className="text-amber-600 dark:text-amber-400 font-semibold">FastAPI</span>
-                  <span>•</span>
-                  <span className="text-amber-600 dark:text-amber-400 font-semibold">React + Tailwind</span>
-                  <span>•</span>
-                  <span className="text-amber-600 dark:text-amber-400 font-semibold">Pytest Suite</span>
-                </div>
+                <p>© {new Date().getFullYear()} DriveHub — Car Dealership Inventory System.</p>
+                <p className="text-slate-400 text-[11px]">All rights reserved.</p>
               </div>
             </footer>
 

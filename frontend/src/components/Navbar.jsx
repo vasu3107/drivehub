@@ -23,7 +23,7 @@ export const Navbar = () => {
   };
 
   return (
-    <header className="sticky top-0 z-40 glass-panel border-b border-amber-500/10 shadow-2xl transition-colors">
+    <header className="sticky top-0 z-40 bg-[#0b0e18] dark:bg-[#0b0e18] light:bg-white border-b-2 border-amber-500/30 shadow-2xl transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           
@@ -92,7 +92,7 @@ export const Navbar = () => {
           {/* Right Action Menu & Theme Switcher */}
           <div className="flex items-center space-x-3">
             
-            {/* Theme Toggle Selector (Light / Dark / System) */}
+            {/* Theme Toggle Selector */}
             <div className="relative">
               <button
                 onClick={() => setThemeDropdownOpen(!themeDropdownOpen)}
