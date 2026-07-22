@@ -1,19 +1,19 @@
 import sys
 import os
 
-# Add backend directory to sys.path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../backend")))
+# Add api directory to sys.path
+sys.path.append(os.path.abspath(os.path.dirname(__file__)))
 
 from app.main import app
 from app.database import engine, Base
 from app.seed import seed_database
 
-# Initialize database schema & seed demo data in /tmp/drivehub.db for Vercel Serverless environment
+# Initialize SQLite schema & seed exotic vehicles on Vercel Serverless cold start
 try:
     Base.metadata.create_all(bind=engine)
     seed_database()
 except Exception as e:
-    print("Vercel cold start db initialization:", e)
+    print("Vercel cold start db init:", e)
 
-# Export FastAPI app as ASGI handler for Vercel
+# ASGI handler for Vercel Serverless Functions
 app = app
