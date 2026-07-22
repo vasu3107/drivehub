@@ -11,6 +11,27 @@
     @apply bg-slate-100 text-slate-900;
   }
 
+  /* Dark Mode Input & Placeholder Styles */
+  html.dark input,
+  html.dark textarea,
+  html.dark select,
+  body:not(.light) input,
+  body:not(.light) textarea,
+  body:not(.light) select {
+    background-color: #0f1422 !important;
+    color: #f8fafc !important;
+    border: 1px solid #28324a !important;
+  }
+
+  html.dark input::placeholder,
+  html.dark textarea::placeholder,
+  body:not(.light) input::placeholder,
+  body:not(.light) textarea::placeholder {
+    color: #94a3b8 !important;
+    opacity: 1 !important;
+    font-weight: 400;
+  }
+
   /* High contrast placeholders for Light Mode */
   html.light input::placeholder,
   html.light textarea::placeholder,
@@ -25,26 +46,29 @@
   html.light select {
     color: #0f172a !important;
     background-color: #ffffff !important;
-    border-color: #cbd5e1 !important;
+    border: 1px solid #cbd5e1 !important;
   }
 
   html.light input:focus,
   html.light textarea:focus,
-  html.light select:focus {
+  html.light select:focus,
+  html.dark input:focus,
+  html.dark textarea:focus,
+  html.dark select:focus {
     border-color: #f59e0b !important;
-    box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2) !important;
+    box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.25) !important;
   }
 }
 
-/* Header Styling: Solid High Contrast Dark Header & Crisp Light Header */
+/* Distinct Header Colors for Dark & Light */
 header {
   transition: all 0.3s ease;
 }
 
 html.dark header, body:not(.light) header {
-  background-color: #0b0e18 !important;
-  border-bottom: 2px solid rgba(245, 158, 11, 0.35) !important;
-  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.7) !important;
+  background-color: #121726 !important;
+  border-bottom: 2px solid #f59e0b !important;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.8) !important;
 }
 
 html.light header {
@@ -55,21 +79,21 @@ html.light header {
 
 /* Dark Mode Glass Panel */
 .dark .glass-panel, body:not(.light) .glass-panel {
-  background: rgba(15, 18, 29, 0.9);
+  background: rgba(15, 19, 32, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.18);
 }
 
 .dark .glass-card, body:not(.light) .glass-card {
-  background: linear-gradient(135deg, rgba(22, 27, 41, 0.85) 0%, rgba(15, 18, 29, 0.95) 100%);
+  background: linear-gradient(135deg, rgba(22, 28, 44, 0.9) 0%, rgba(15, 19, 32, 0.95) 100%);
   backdrop-filter: blur(14px);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .dark .glass-card:hover, body:not(.light) .glass-card:hover {
-  border-color: rgba(245, 158, 11, 0.4);
-  box-shadow: 0 12px 35px -10px rgba(245, 158, 11, 0.2);
+  border-color: rgba(245, 158, 11, 0.45);
+  box-shadow: 0 12px 35px -10px rgba(245, 158, 11, 0.25);
 }
 
 /* Light Mode Glass Panel */

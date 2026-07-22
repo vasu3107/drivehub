@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { vehiclesAPI, inventoryAPI } from '../services/api';
 import { useAuth } from '../context/AuthContext';
-import { ArrowLeft, ShoppingBag, Calendar, Tag, Shield, RefreshCw, CheckCircle2 } from 'lucide-react';
+import { ArrowLeft, ShoppingBag, Calendar, Tag, Shield } from 'lucide-react';
 
 export function VehicleDetails({ showToast }) {
   const { id } = useParams();
@@ -50,7 +50,7 @@ export function VehicleDetails({ showToast }) {
 
   if (loading) {
     return (
-      <div className="max-w-4xl mx-auto py-12 text-center animate-pulse space-y-4">
+      <div className="w-full py-12 text-center animate-pulse space-y-4">
         <div className="bg-obsidian-800 h-96 rounded-2xl w-full" />
         <div className="bg-obsidian-800 h-8 w-1/2 rounded-lg mx-auto" />
       </div>
@@ -67,7 +67,7 @@ export function VehicleDetails({ showToast }) {
   }).format(vehicle.price);
 
   return (
-    <div className="max-w-5xl mx-auto py-6 space-y-6">
+    <div className="w-full space-y-6">
       
       {/* Back button */}
       <Link
@@ -96,14 +96,14 @@ export function VehicleDetails({ showToast }) {
         </div>
 
         {/* Specs & Actions */}
-        <div className="p-8 flex flex-col justify-between space-y-6">
+        <div className="p-8 sm:p-12 flex flex-col justify-between space-y-6">
           <div>
             <div className="flex items-center space-x-2 text-xs font-semibold text-slate-400 mb-2">
               <Calendar className="w-4 h-4 text-amber-400" />
               <span>{vehicle.year} Model Year</span>
             </div>
 
-            <h1 className="text-3xl font-black text-white gold-gradient-text">
+            <h1 className="text-3xl sm:text-4xl font-black text-white gold-gradient-text">
               {vehicle.make} {vehicle.model}
             </h1>
 
@@ -111,13 +111,13 @@ export function VehicleDetails({ showToast }) {
               {vehicle.description || "Designed for uncompromised luxury and thrill. Built with precision engineering and advanced automotive aesthetics."}
             </p>
 
-            <div className="mt-6 pt-6 border-t border-obsidian-border grid grid-cols-2 gap-4">
-              <div className="bg-obsidian-900/80 p-4 rounded-2xl border border-obsidian-border">
+            <div className="mt-8 pt-6 border-t border-obsidian-border grid grid-cols-2 gap-4">
+              <div className="bg-obsidian-900/80 p-5 rounded-2xl border border-obsidian-border">
                 <span className="text-[10px] uppercase font-bold text-slate-400 block tracking-wider">Price</span>
-                <span className="text-2xl font-black text-white gold-gradient-text">{formattedPrice}</span>
+                <span className="text-3xl font-black text-white gold-gradient-text">{formattedPrice}</span>
               </div>
 
-              <div className="bg-obsidian-900/80 p-4 rounded-2xl border border-obsidian-border">
+              <div className="bg-obsidian-900/80 p-5 rounded-2xl border border-obsidian-border">
                 <span className="text-[10px] uppercase font-bold text-slate-400 block tracking-wider">Stock Availability</span>
                 <span className={`text-xl font-black ${isOutOfStock ? 'text-rose-400' : 'text-emerald-400'}`}>
                   {isOutOfStock ? 'Out of Stock' : `${vehicle.quantity} Units Left`}
@@ -127,7 +127,7 @@ export function VehicleDetails({ showToast }) {
           </div>
 
           {/* Action Button */}
-          <div className="space-y-3 pt-4 border-t border-obsidian-border">
+          <div className="space-y-3 pt-6 border-t border-obsidian-border">
             <button
               onClick={handlePurchase}
               disabled={isOutOfStock || purchasing}

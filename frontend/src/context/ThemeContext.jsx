@@ -16,6 +16,10 @@ export const ThemeProvider = ({ children }) => {
       }
 
       root.classList.add(resolvedTheme);
+      // Also apply class to body for maximum Tailwind compatibility
+      document.body.classList.remove('light', 'dark');
+      document.body.classList.add(resolvedTheme);
+
       localStorage.setItem('drivehub_theme', targetTheme);
     };
 

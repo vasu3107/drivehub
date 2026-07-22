@@ -24,7 +24,7 @@ export function App() {
             
             <Navbar />
 
-            <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <main className="flex-1 w-full px-4 sm:px-8 lg:px-12 py-8">
               <Routes>
                 <Route path="/" element={<Home showToast={showToast} />} />
                 <Route path="/vehicles/:id" element={<VehicleDetails showToast={showToast} />} />
@@ -34,8 +34,8 @@ export function App() {
               </Routes>
             </main>
 
-            <footer className="border-t border-slate-200 dark:border-obsidian-border bg-white dark:bg-obsidian-950 py-6 text-center text-xs text-slate-500 dark:text-slate-400 transition-colors">
-              <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <footer className="border-t border-slate-200 dark:border-obsidian-border bg-white dark:bg-obsidian-950 py-6 text-center text-xs text-slate-500 dark:text-slate-400 transition-colors w-full">
+              <div className="w-full px-4 sm:px-8 lg:px-12 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <p>© {new Date().getFullYear()} DriveHub — Car Dealership Inventory System.</p>
                 <p className="text-slate-400 text-[11px]">All rights reserved.</p>
               </div>
