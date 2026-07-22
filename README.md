@@ -37,23 +37,23 @@ DriveHub provides an end-to-end inventory management solution for car dealership
 
 ## 🎨 Visual Application Showcase
 
-Real application screenshots demonstrating the Admin Portal, React Routing, and Theme System in action:
+Real application screenshots demonstrating the new design, full-screen layout, and Admin Control Center in action:
 
-### 1. Admin Management Portal (`/admin`) — Dark Mode
-![DriveHub Admin Portal Dark Mode](docs/screenshots/admin_portal_dark.png)
-*Dedicated Admin Control Center featuring Forms/UI to add new vehicles, update existing details, restock stock quantities, and delete vehicle records from the database in Dark Mode.*
-
----
-
-### 2. Admin Management Portal (`/admin`) — Light Mode
-![DriveHub Admin Portal Light Mode](docs/screenshots/admin_portal_light.png)
-*Admin Control Center with Forms/UI in Light Mode with high-contrast input placeholders.*
+### 1. Showroom Homepage (`/`) — New Design & Reference Header
+![DriveHub Showroom Homepage](docs/screenshots/showroom_homepage.png)
+*Features bespoke Obsidian Charcoal and Cyber Gold glassmorphism cards, reference header capsule bar, stock status badges ("In Stock", "Low Stock", "Out of Stock"), formatted USD prices, and instant demo login switchers.*
 
 ---
 
-### 3. Showroom Inventory Showcase (`/`) — Light Mode
-![DriveHub Showroom Light Mode](docs/screenshots/showroom_light.png)
-*High-end Showroom interface displaying vehicle cards, search filtering, and stock status badges in Light Mode.*
+### 2. Dedicated Admin Management Portal (`/admin`) — Forms & UI
+![DriveHub Admin Portal](docs/screenshots/admin_portal.png)
+*Dedicated Admin Control Center featuring Forms/UI to add new vehicles, update existing details, restock stock quantities, and delete vehicle records from the database.*
+
+---
+
+### 3. Dedicated Vehicle Details Page (`/vehicles/:id`)
+![DriveHub Vehicle Details](docs/screenshots/vehicle_details.png)
+*Detailed vehicle specifications view with high-res photography, stock level monitoring, and direct purchase triggers.*
 
 ---
 
@@ -260,7 +260,7 @@ TOTAL                         369     51    86%
 Integrating AI as a pair-programmer dramatically accelerated development speed while maintaining high quality standards. By utilizing AI to write comprehensive Pytest suites first, edge cases like SQLite concurrency isolation and unauthorized role access were caught early. The AI co-authorship policy ensures complete transparency across commits:
 
 ```text
-git commit -m "feat(ui): Fix header contrast, high contrast light mode placeholders, and add deployment guide
+git commit -m "docs: Update README.md with new design screenshot images
 
 Co-authored-by: Antigravity AI <ai@users.noreply.github.com>"
 ```
