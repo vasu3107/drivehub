@@ -7,6 +7,7 @@ import { VehicleDetails } from './pages/VehicleDetails';
 import { AdminDashboard } from './pages/AdminDashboard';
 import { AuthPage } from './pages/AuthPage';
 import { AuthProvider } from './context/AuthContext';
+import { ThemeProvider } from './context/ThemeContext';
 
 export function App() {
   const [toast, setToast] = useState(null);
@@ -16,39 +17,41 @@ export function App() {
   };
 
   return (
-    <AuthProvider>
-      <BrowserRouter>
-        <div className="min-h-screen bg-[#080a0f] text-slate-100 flex flex-col font-sans">
-          
-          <Navbar />
+    <ThemeProvider>
+      <AuthProvider>
+        <BrowserRouter>
+          <div className="min-h-screen bg-slate-50 dark:bg-[#080a0f] text-slate-900 dark:text-slate-100 flex flex-col font-sans transition-colors duration-300">
+            
+            <Navbar />
 
-          <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <Routes>
-              <Route path="/" element={<Home showToast={showToast} />} />
-              <Route path="/vehicles/:id" element={<VehicleDetails showToast={showToast} />} />
-              <Route path="/admin" element={<AdminDashboard showToast={showToast} />} />
-              <Route path="/login" element={<AuthPage mode="login" showToast={showToast} />} />
-              <Route path="/register" element={<AuthPage mode="register" showToast={showToast} />} />
-            </Routes>
-          </main>
+            <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+              <Routes>
+                <Route path="/" element={<Home showToast={showToast} />} />
+                <Route path="/vehicles/:id" element={<VehicleDetails showToast={showToast} />} />
+                <Route path="/admin" element={<AdminDashboard showToast={showToast} />} />
+                <Route path="/login" element={<AuthPage mode="login" showToast={showToast} />} />
+                <Route path="/register" element={<AuthPage mode="register" showToast={showToast} />} />
+              </Routes>
+            </main>
 
-          <footer className="border-t border-obsidian-border bg-obsidian-950 py-8 text-center text-xs text-slate-400">
-            <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-              <p>© {new Date().getFullYear()} DriveHub — Car Dealership Inventory System (TDD Kata).</p>
-              <div className="flex items-center space-x-4">
-                <span className="text-amber-400 font-semibold">FastAPI</span>
-                <span>•</span>
-                <span className="text-amber-400 font-semibold">React + Tailwind</span>
-                <span>•</span>
-                <span className="text-amber-400 font-semibold">Pytest Suite</span>
+            <footer className="border-t border-slate-200 dark:border-obsidian-border bg-white dark:bg-obsidian-950 py-8 text-center text-xs text-slate-500 dark:text-slate-400 transition-colors">
+              <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p>© {new Date().getFullYear()} DriveHub — Car Dealership Inventory System (TDD Kata).</p>
+                <div className="flex items-center space-x-4">
+                  <span className="text-amber-600 dark:text-amber-400 font-semibold">FastAPI</span>
+                  <span>•</span>
+                  <span className="text-amber-600 dark:text-amber-400 font-semibold">React + Tailwind</span>
+                  <span>•</span>
+                  <span className="text-amber-600 dark:text-amber-400 font-semibold">Pytest Suite</span>
+                </div>
               </div>
-            </div>
-          </footer>
+            </footer>
 
-          <Toast toast={toast} onClose={() => setToast(null)} />
+            <Toast toast={toast} onClose={() => setToast(null)} />
 
-        </div>
-      </BrowserRouter>
-    </AuthProvider>
+          </div>
+        </BrowserRouter>
+      </AuthProvider>
+    </ThemeProvider>
   );
 }

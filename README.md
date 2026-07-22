@@ -13,11 +13,12 @@ DriveHub is a full-stack, production-grade **Car Dealership Inventory Management
 ## 📋 Table of Contents
 1. [Project Overview](#-project-overview)
 2. [Visual Application Showcase](#-visual-application-showcase)
-3. [API Architecture & Response Format](#-api-architecture--response-format)
-4. [Key Features](#-key-features)
-5. [Local Setup & Run Instructions](#-local-setup--run-instructions)
-6. [Test-Driven Development & Test Report](#-test-driven-development--test-report)
-7. [My AI Usage (Mandatory)](#-my-ai-usage)
+3. [Theme Modes (Dark, Light, System)](#-theme-modes-dark-light-system)
+4. [API Architecture & Response Format](#-api-architecture--response-format)
+5. [Key Features](#-key-features)
+6. [Local Setup & Run Instructions](#-local-setup--run-instructions)
+7. [Test-Driven Development & Test Report](#-test-driven-development--test-report)
+8. [My AI Usage (Mandatory)](#-my-ai-usage)
 
 ---
 
@@ -29,28 +30,39 @@ DriveHub provides an end-to-end inventory management solution for car dealership
 * **User Roles**: **Customer** (browse, search, purchase) vs **Admin** (add, edit, delete, restock).
 * **Inventory Control**: Purchasing a vehicle automatically decrements stock quantity by 1. Purchasing is strictly disabled when stock quantity is 0.
 * **Admin Management Portal**: Dedicated Admin page (`/admin`) featuring Forms/UI to add, update, delete, and restock vehicle inventory.
+* **Multi-Theme System**: Seamless switching between **Dark Mode**, **Light Mode**, and **System Theme Mode**.
 
 ---
 
 ## 🎨 Visual Application Showcase
 
-Real screenshots demonstrating the Obsidian & Cyber Gold application interface, React Routing, and Admin Control Center in action:
+Real application screenshots demonstrating the Admin Portal, React Routing, and Theme System in action:
 
-### 1. Luxury Showroom Homepage (`/`)
-![DriveHub Luxury Showroom](docs/screenshots/showroom_homepage.png)
-*Features bespoke Obsidian Charcoal and Cyber Gold glassmorphism cards, stock status badges ("In Stock", "Low Stock", "Out of Stock"), formatted USD prices, and instant demo login switchers.*
-
----
-
-### 2. Dedicated Admin Management Portal (`/admin`) — Forms & UI
-![DriveHub Admin Portal](docs/screenshots/admin_portal.png)
-*Dedicated Admin Control Center featuring Forms/UI to add new vehicles, update existing details, restock stock quantities, and delete vehicle records from the database.*
+### 1. Admin Management Portal (`/admin`) — Dark Mode
+![DriveHub Admin Portal Dark Mode](docs/screenshots/admin_portal_dark.png)
+*Dedicated Admin Control Center featuring Forms/UI to add new vehicles, update existing details, restock stock quantities, and delete vehicle records from the database in Dark Mode.*
 
 ---
 
-### 3. Dedicated Vehicle Details Page (`/vehicles/:id`)
-![DriveHub Vehicle Details](docs/screenshots/vehicle_details.png)
-*Detailed vehicle specifications view with high-res photography, stock level monitoring, and direct purchase triggers.*
+### 2. Admin Management Portal (`/admin`) — Light Mode
+![DriveHub Admin Portal Light Mode](docs/screenshots/admin_portal_light.png)
+*Admin Control Center with Forms/UI in Light Mode.*
+
+---
+
+### 3. Showroom Inventory Showcase (`/`) — Light Mode
+![DriveHub Showroom Light Mode](docs/screenshots/showroom_light.png)
+*High-end Showroom interface displaying vehicle cards, search filtering, and stock status badges in Light Mode.*
+
+---
+
+## 🌓 Theme Modes (Dark, Light, System)
+
+The application includes an intuitive Theme Mode Selector in the header navigation:
+
+* **Dark Mode** (`dark`): Deep Obsidian Charcoal background (`#080a0f`) with Cyber Gold accents and glowing glass panels.
+* **Light Mode** (`light`): Clean, crisp white & slate styling (`bg-slate-50`) with gold highlights.
+* **System Mode** (`system`): Automatically syncs with the user's OS operating system color scheme preference.
 
 ---
 
@@ -228,13 +240,13 @@ TOTAL                         369     51    86%
 * *"I used Gemini to brainstorm API endpoint structures and design the ORM database schema for Users, Vehicles, and Transactions."*
 * *"I asked Gemini to generate unit tests for my service layer and API routes following strict TDD Red-Green-Refactor principles."*
 * *"I used AI to design a standardized API response and error handler wrapper (`app/core/response.py`) ensuring uniform JSON envelopes across all endpoints."*
-* *"I used AI to craft modern Tailwind CSS glassmorphism UI components, stock status badge logic, and instant demo login switchers."*
+* *"I used AI to craft modern Tailwind CSS glassmorphism UI components, stock status badge logic, instant demo login switchers, and Light/Dark/System theme switching."*
 
 ### 3. Reflection on AI Impact on Workflow
 Integrating AI as a pair-programmer dramatically accelerated development speed while maintaining high quality standards. By utilizing AI to write comprehensive Pytest suites first, edge cases like SQLite concurrency isolation and unauthorized role access were caught early. The AI co-authorship policy ensures complete transparency across commits:
 
 ```text
-git commit -m "feat(routing): Add React router, Admin forms/UI portal, Obsidian Gold palette, and updated UI screenshots
+git commit -m "feat(theme): Add Dark, Light, and System theme mode switching with Admin portal screenshots
 
 Co-authored-by: Antigravity AI <ai@users.noreply.github.com>"
 ```
